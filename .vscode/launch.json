@@ -13,6 +13,8 @@
       "args": [
         "-D",
         "debug-info=y",
+        "--dir",
+        ".",
         "./foo.wasm"
       ],
       "cwd": "${workspaceFolder}",
