@@ -1,0 +1,15 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+      {
+          "label": "build foo.wasm",
+          "type": "shell",
+          "command": "rustc -g foo.rs --target wasm32-wasi",
+          "group": "build",
+          "presentation": {
+              "reveal": "always",
+              "panel": "new"
+          }
+      }
+  ]
+}
