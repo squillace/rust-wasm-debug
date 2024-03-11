@@ -4,12 +4,12 @@
   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
+    
     {
       "type": "lldb",
       "request": "launch",
-      "name": "Wasm Debug",
+      "name": "LLDB wasm debug",
       "program": "wasmtime",
-    
       "args": [
         "-D",
         "debug-info=y",
@@ -19,6 +19,28 @@
       ],
       "cwd": "${workspaceFolder}",
       "preLaunchTask": "build foo.wasm"
-    }
+    },
+    {
+      "name": "GDB wasm debug",
+      "type":"cppdbg",
+      "request": "launch",
+      "program": "/home/squillace/.wasmtime/bin/wasmtime",
+      "args": [
+        "-D",
+        "debug-info=y",
+        "--dir",
+        ".",
+        "./foo.wasm"
+      ],
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "MIMode": "gdb",
+      "setupCommands": [
+          {
+              "text": "-enable-pretty-printing",
+          }
+      ],
+      "preLaunchTask": "build foo.wasm"
+    },
   ]
 }
