@@ -3,7 +3,6 @@ use std::io::Write;
 
 fn write(name: std::string::String) {
     let mut f = File::create(name).unwrap();
-    
     writeln!(&mut f, "This is a test").unwrap();
 }
 
